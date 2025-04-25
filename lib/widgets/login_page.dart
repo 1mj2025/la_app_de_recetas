@@ -13,7 +13,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-         // es la imagen que se encuentra de fondo
+       
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
@@ -94,7 +94,7 @@ class LoginPage extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () async {
 
-                            //posible modificacion de la sintaxis
+                      
                             if (emailController.text.isEmpty || passwordController.text.isEmpty) {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
@@ -105,7 +105,7 @@ class LoginPage extends StatelessWidget {
                               return;
                             }
                             try {
-                              ///aqui me salta el error
+                            
                               await FirebaseAuth.instance.signInWithEmailAndPassword(
                                 email: emailController.text.trim(),
                                 password: passwordController.text.trim(),
@@ -118,7 +118,7 @@ class LoginPage extends StatelessWidget {
                               );
                               
                               context.go('/recetas');
-                              //Navigator.pushReplacementNamed(context, '/recetas');
+                             
                             } on FirebaseAuthException catch (e) {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(

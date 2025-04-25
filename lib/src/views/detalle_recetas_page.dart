@@ -25,12 +25,7 @@ class DetalleRecetasPage extends StatelessWidget {
           ),
           textAlign: TextAlign.center,
         ),
-        /*  actions: [
-          IconButton(
-            icon: Icon(Icons.favorite_border),
-            onPressed: () {},
-          )
-        ],*/
+       
       ),
       body: ListView(
         children: [

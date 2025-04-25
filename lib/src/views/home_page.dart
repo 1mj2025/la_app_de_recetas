@@ -60,9 +60,6 @@ class _HomePageState extends State<HomePage> {
           children: [
             GitPage(),
              Favoritospage(),
-
-
-           // mi login hace falta
              LoginPage(),
           ],
         ),

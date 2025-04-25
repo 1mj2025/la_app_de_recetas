@@ -13,8 +13,7 @@ final router = GoRouter(
   routes: [
     GoRoute(
       
-   //     '/login': (context) => const LoginPage(),
-   //     '/register' : (context) => const RegisterPage(), 
+
       path: '/recetas',
       name: 'recetas',
       builder: (context, settings) => HomePage(),
@@ -26,7 +25,7 @@ final router = GoRouter(
             final id = settings.pathParameters['recetasId'];
             final extras = settings.extra as Map;
             debugPrint('extras: $extras');
-            //print(extras);
+            
 
             return DetalleRecetasPage(
               id: '$id',
@@ -42,10 +41,7 @@ final router = GoRouter(
 
       ],
     ),
-    /*GoRoute(
-        path: '/login',
-        name: 'login',
-        builder: (context, settings) => LoginPage())*/
+
     GoRoute(
       path: '/favoritos',
       builder: (context, State) => const Favoritospage(),

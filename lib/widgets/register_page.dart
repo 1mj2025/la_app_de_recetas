@@ -13,7 +13,7 @@ class RegisterPage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // aqui esta es la imagen de fondo
+      
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
@@ -89,7 +89,7 @@ class RegisterPage extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 20),
-                      // Botón del registro, versi agrada el color
+                      
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
@@ -115,7 +115,7 @@ class RegisterPage extends StatelessWidget {
                                 ),
                               );
                               GoRouter.of(context).go('/recetas');
-                              //Navigator.pushReplacementNamed(context, '/recetas');
+                             
                             } on FirebaseAuthException catch (e) {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(

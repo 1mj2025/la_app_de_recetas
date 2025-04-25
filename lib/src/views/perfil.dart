@@ -9,16 +9,15 @@ class Perfil extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //title: const Text('Hola Mundo'),
+        
         backgroundColor: Colors.deepOrangeAccent,
         actions: [
           IconButton(
             icon: const Icon(Icons.logout),
-            //modifique una icons de salida,,
-            //tooltip: 'Cerrar Sesión',
+            
             onPressed: () async {
               await FirebaseAuth.instance.signOut(); 
-              Navigator.pushReplacementNamed(context, '/login'); //cierrra la secion, e ingrsa al login
+              Navigator.pushReplacementNamed(context, '/login'); 
             },
           ),
         ],

@@ -12,8 +12,7 @@ class ItemList extends StatelessWidget {
       color: Color.fromARGB(255, 245, 187, 116),
       child: InkWell(
         onTap: () {
-          //navegacion a la pantalla de detalle
-          // Navigator
+      
           context.goNamed(
             'detalle-recetas',
             pathParameters: {'recetasId': receta['id'].toString()},
