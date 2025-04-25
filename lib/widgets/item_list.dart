@@ -1,4 +1,4 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mi_recetario_app/widgets/barra_inferior.dart';
 class ItemList extends StatelessWidget {
@@ -69,4 +69,4 @@ class ItemList extends StatelessWidget {
       ),
     );
   }
-}*/
+}

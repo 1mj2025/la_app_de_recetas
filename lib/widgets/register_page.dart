@@ -1,4 +1,4 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:go_router/go_router.dart';
 
@@ -17,7 +17,7 @@ class RegisterPage extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('lib/assets/fondo_2.jpg'), 
+                image: AssetImage('lib/assets/logos/fondo_2.jpg'), 
                 fit: BoxFit.cover,
               ),
             ),
@@ -159,4 +159,4 @@ class RegisterPage extends StatelessWidget {
       ),
     );
   }
-}*/
+}

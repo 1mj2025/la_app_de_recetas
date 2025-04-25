@@ -1,4 +1,4 @@
-/*
+
 import 'package:flutter/material.dart';
 
 class DetalleRecetasPage extends StatelessWidget {
@@ -113,4 +113,4 @@ class DetalleRecetasPage extends StatelessWidget {
       ),
     );
   }
-}*/
+}

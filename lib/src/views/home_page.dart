@@ -1,7 +1,10 @@
-/*
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mi_recetario_app/src/views/favoritos.dart';
 import 'package:mi_recetario_app/src/views/git_page.dart';
+import 'package:mi_recetario_app/widgets/login_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,6 +16,26 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int selectedIndex = 0;
   late PageController pc;
+  
+  final List<String> routes = ['/recetas', '/favoritos', '/login',  '/register'];
+  void onItemTapped(int index) {
+    if(index==1){
+      final user=FirebaseAuth.instance.currentUser;
+      if(user==null){
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Debes de tener una cuenta para ingresar al apartado de favoritos'),
+          backgroundColor: Colors.red,)
+        );
+        Navigator.pushNamed(context,'/register');
+        return;
+        
+      }
+    }
+    setState(() {
+      selectedIndex = index;
+    });
+    context.go(routes[index]);
+  }
 
   @override
   void initState() {
@@ -36,11 +59,11 @@ class _HomePageState extends State<HomePage> {
           onPageChanged: setPaginaActual,
           children: [
             GitPage(),
-            Favoritospage(),
+             Favoritospage(),
 
 
            // mi login hace falta
-            //LoginPage(),
+             LoginPage(),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -69,4 +92,4 @@ class _HomePageState extends State<HomePage> {
                   label: "Registro")
             ]));
   }
-}*/
+}

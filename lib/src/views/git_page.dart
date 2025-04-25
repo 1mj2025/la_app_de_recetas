@@ -1,4 +1,4 @@
-/*
+
 import 'package:flutter/material.dart';
 import 'package:mi_recetario_app/src/views/aperitivos_page.dart';
 import 'package:mi_recetario_app/src/views/bebidas_page.dart';
@@ -275,4 +275,4 @@ class ImageDetails {
   final String imagePacht;
   final String title;
   ImageDetails({required this.imagePacht, required this.title});
-}*/
+}

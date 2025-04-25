@@ -85,10 +85,25 @@ class MyApp extends StatelessWidget {
 }*/
 
 
-/*
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide EmailAuthProvider;
 import 'package:firebase_ui_auth/firebase_ui_auth.dart';
+import 'package:mi_recetario_app/firebase_options.dart';
+import 'package:mi_recetario_app/src/router/routes.dart';
+import 'package:mi_recetario_app/src/views/home_page.dart';
+import 'package:mi_recetario_app/widgets/login_page.dart';
+import 'package:mi_recetario_app/widgets/register_page.dart';
+//import 'firebase_options.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -97,38 +112,31 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final providers = [EmailAuthProvider()];
 
-    void onSignedIn() {
-      Navigator.pushReplacementNamed(context, '/profile');
-    }
+    return MaterialApp.router(
 
-    return MaterialApp(
-      initialRoute: FirebaseAuth.instance.currentUser == null ? '/sign-in' : '/profile',
-      routes: {
-        '/sign-in': (context) {
+      debugShowCheckedModeBanner: false, 
+      title: 'ChefProcess', 
+      //aqui modifique quien sera mi pagina que saldra de primero
+      //home: const HomePage(),
+      routerConfig: router,
+      //initialRoute: FirebaseAuth.instance.currentUser == null ? '/recetas' : '/profile',
+     /* routes: {
+        '/login': (context) => const LoginPage(),
+        '/register' : (context) => const RegisterPage(), 
+        //'/profile': (context) => const ProfilePage(), 
+        //'/sign-out': (context) => const SignOutPage(),
+        ///'/pagina1': (context) => const Pagina1(), 
+       /* '/sign-in': (context) {
           return SignInScreen(
             providers: providers,
             actions: [
-              AuthStateChangeAction<UserCreated>((context, state) {
-                // Put any new user logic here
-                onSignedIn();
-              }),
               AuthStateChangeAction<SignedIn>((context, state) {
-                onSignedIn();
+                Navigator.pushReplacementNamed(context, '/profile');  
               }),
             ],
           );
-        },
-        '/profile': (context) {
-          return ProfileScreen(
-            providers: providers,
-            actions: [
-              SignedOutAction((context) {
-                Navigator.pushReplacementNamed(context, '/sign-in');
-              }),
-            ],
-          );
-        },
-      },
+        },*/
+      },*/
     );
   }
-}*/
+}

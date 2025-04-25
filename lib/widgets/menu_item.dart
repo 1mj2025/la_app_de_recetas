@@ -1,4 +1,4 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 class MenuItem extends StatelessWidget {
   const MenuItem({
@@ -20,4 +20,4 @@ class MenuItem extends StatelessWidget {
       leading: icon != null ? Icon(icon) : null,
     );
   }
-}*/
+}

@@ -1,5 +1,5 @@
-/*import 'package:flutter/material.dart';
-//import 'package:go_router/go_router.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatelessWidget {
@@ -17,7 +17,7 @@ class LoginPage extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('lib/assets/fondo_1.jpg'), 
+                image: AssetImage('lib/assets/logos/fondo_1.jpg'), 
                 fit: BoxFit.cover,
               ),
             ),
@@ -105,6 +105,7 @@ class LoginPage extends StatelessWidget {
                               return;
                             }
                             try {
+                              ///aqui me salta el error
                               await FirebaseAuth.instance.signInWithEmailAndPassword(
                                 email: emailController.text.trim(),
                                 password: passwordController.text.trim(),
@@ -116,8 +117,8 @@ class LoginPage extends StatelessWidget {
                                 ),
                               );
                               
-                              //context.go('/recetas');
-                              Navigator.pushReplacementNamed(context, '/recetas');
+                              context.go('/recetas');
+                              //Navigator.pushReplacementNamed(context, '/recetas');
                             } on FirebaseAuthException catch (e) {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
@@ -161,4 +162,4 @@ class LoginPage extends StatelessWidget {
       ),
     );
   }
-}*/
+}

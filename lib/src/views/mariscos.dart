@@ -1,4 +1,4 @@
-/*
+
 import 'package:flutter/material.dart';
 import 'package:mi_recetario_app/src/api/api.dart';
 import 'package:mi_recetario_app/widgets/item_list.dart';
@@ -30,4 +30,4 @@ class MariscosPage extends StatelessWidget {
       ),
     );
   }
-}*/
+}

@@ -1,1 +1,1 @@
-//List<Map<String, dynamic>> recetasFavoritas = [];
+List<Map<String, dynamic>> recetasFavoritas = [];
